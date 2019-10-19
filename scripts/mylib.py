@@ -3,6 +3,9 @@ class MyClass:
         self.name = name
         self.age = age
 
+    def __add__(self, other):
+        return MyClass(self.name + other.name, self.age + other.age)
+
     def printname(self):
         print("My name is %s" % self.name)
 
@@ -17,3 +20,7 @@ sun.printname()
 sun.printage()
 aks.printname()
 aks.printage()
+
+obj = sun + aks
+obj.printname()
+obj.printage()
